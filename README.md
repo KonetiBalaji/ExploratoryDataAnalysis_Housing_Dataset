@@ -1,65 +1,78 @@
-# 🏡 House Prices - Exploratory Data Analysis
+# 🏡 House Prices - Exploratory Data Analysis (Enhanced)
 
-##  Project Overview
-This EDA project explores the Housing dataset to identify factors influencing house prices. It includes data cleaning, statistical analysis, and insightful visualizations to uncover significant trends and relationships.
+## Project Overview
+This enhanced EDA project explores the Housing dataset to identify factors influencing house prices. It now includes advanced data preprocessing, feature engineering, statistical analysis, machine learning models, and interactive visualizations.
 
-##  Project Structure
+## Project Structure
 
 ```
 House_Prices_EDA/
 ├── dataset/
 │   └── Housing.csv
-├── notebooks/
-│   └── exploratory_data_analysis.ipynb
 ├── images/
 │   ├── correlation_heatmap.png
+│   ├── enhanced_correlation_heatmap.png
 │   ├── price_furnishing.png
+│   ├── price_furnishing_interactive.html
 │   ├── price_distribution.png
-│   └── price_mainroad.png
-└── requirements.txt
+│   ├── price_mainroad.png
+│   ├── 3d_price_analysis.html
+│   ├── price_per_sqft_analysis.html
+│   └── feature_importance.html
+├── Housing_Dataset.py
+├── requirements.txt
+└── README.md
 ```
 
-##  Key Findings
+## Key Features & Improvements
+- **Advanced Preprocessing:** Outlier removal, feature scaling, and new feature creation (price per sqft, total rooms, amenities count)
+- **Statistical Analysis:** ANOVA tests for categorical features
+- **Machine Learning Models:** Linear Regression and Random Forest for price prediction
+- **Feature Importance:** Random Forest feature importance visualized
+- **Interactive Visualizations:** 3D scatter plots, box plots, and feature importance using Plotly
+- **Comprehensive Reporting:** Model performance metrics (R², MSE, MAE, cross-validation)
 
-###  Numerical Insights:
-- Strong positive correlation between **Area** and **Price** (`0.54`).
-- Houses with more **Bathrooms** (`0.52`), **Stories** (`0.42`), and **Bedrooms** (`0.37`) command higher prices.
-- Presence of **Parking** also moderately increases house prices (`0.38`).
-
-###  Categorical Insights:
-- Houses located on **Main Roads** and within **Preferred Areas** fetch higher prices.
-- Features such as **Guestrooms**, **Basements**, **Hot Water Heating**, and **Air Conditioning** significantly elevate house values.
-- **Furnished** houses are notably pricier, followed by semi-furnished and unfurnished.
-
-##  Visualizations:
-- **Correlation Heatmap**: Illustrates numeric relationships clearly.
-- **Average Price by Furnishing Status**: Clearly shows furnished houses commanding highest prices.
-- **Distribution of House Prices**: Highlights the price range distribution.
-- **Price Distribution based on Main Road Access**: Indicates a higher median price for houses near main roads.
-
-##  Technologies Used:
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-
-##  Instructions to Run Locally:
+## Instructions to Run Locally
 
 1. Clone the repository or download the files.
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-3. Run the notebook:
+3. Run the script:
 ```bash
-jupyter notebook
+python Housing_Dataset.py
 ```
+4. View the generated plots and interactive HTML files in the `images/` directory.
 
-##  Conclusion:
-House prices are heavily influenced by features like area, furnishing status, location (main road), and amenities (basement, air conditioning). Understanding these factors clearly can significantly improve predictive modeling efforts.
+## Outputs
+- **Analysis Summary:** Printed in the terminal after running the script
+- **Statistical Test Results:** p-values for all categorical features
+- **Model Performance:** R², MSE, MAE, and cross-validation scores for both models
+- **Visualizations:**
+  - Enhanced correlation heatmap (`images/enhanced_correlation_heatmap.png`)
+  - Interactive price distribution by furnishing status (`images/price_furnishing_interactive.html`)
+  - 3D price analysis (`images/3d_price_analysis.html`)
+  - Price per square foot analysis (`images/price_per_sqft_analysis.html`)
+  - Feature importance (`images/feature_importance.html`)
+
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Plotly
+- SciPy
+
+## License
+See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🚀 Future Work:
-- Implement advanced regression models (Linear Regression, Random Forest) to predict house prices.
-- Conduct deeper analysis incorporating external factors (economic indicators, market trends).
+## 🚀 Future Work
+- Hyperparameter tuning for machine learning models
+- Add more advanced regression models
+- Incorporate external data (e.g., economic indicators)
+- Build a web dashboard for interactive EDA
